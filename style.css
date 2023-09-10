@@ -24,6 +24,9 @@ html {
 }
 
 body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background: var(--bg-color);
     color: var(--text-color);  
     overscroll-behavior-y: auto;
@@ -33,6 +36,7 @@ section{
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
+
 
 .header {
     position: fixed;
@@ -209,8 +213,39 @@ span {
 }
 
 .home1 {
-    height:50rem;
+    width: 35vw;
 }
+
+/* responsive image and text*/
+@media (max-width: 817px) {
+    .home .home1 {
+        display: none;
+    }
+    .home {
+        justify-items: center;
+        background-color: var(--bg-color);
+    }
+    .home::before {
+        background-image: url(images/home.png);
+        background-size:contain;
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        opacity: 0.4;
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+    }
+    .home-content h3,
+    .home-content h1,
+    .home-content p ,
+    .home-content .social-media{
+        isolation: isolate;
+    }
+}
+
 
 .social-media a{
     display: inline-flex;
@@ -250,7 +285,6 @@ span {
 }
 
 .about {
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -259,6 +293,7 @@ span {
 }
 
 .about-img img{
+    float: left;
     width: 35vw;
 }
 
@@ -459,13 +494,13 @@ center
 }
 
 .form-control {
-    width: 50%;
+    width: 80%;
+    margin: auto;
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
     border-radius: 1rem;
-    margin: 2rem 17rem;
-    
+
 }
 
 .login-container form {
